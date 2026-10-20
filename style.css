@@ -1,0 +1,36 @@
+:root{--bg:#050505;--glass:rgba(255,255,255,.04);--border:rgba(255,255,255,.08);--text:#e9e9e9;--muted:#8d8d8d;--accent:#ffffff}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:radial-gradient(ellipse at 85% 95%,rgba(90,10,20,.18),transparent 55%),var(--bg);color:var(--text);font-family:"Segoe UI",Tahoma,"Noto Sans Arabic",Arial,sans-serif;min-height:100vh;overflow-x:hidden}
+#particleCanvas{position:fixed;inset:0;width:100%;height:100%;z-index:0}
+#intro-screen{position:fixed;inset:0;background:#000;z-index:100;display:flex;align-items:center;justify-content:center;transition:opacity .9s ease,visibility .9s}
+#intro-screen.hide{opacity:0;visibility:hidden}
+.intro-line{width:60px;height:2px;background:linear-gradient(90deg,transparent,#fff,transparent);animation:introPulse 1.2s ease-in-out infinite}
+@keyframes introPulse{0%,100%{opacity:.25;width:40px}50%{opacity:1;width:110px}}
+main{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 18px;gap:22px}
+.glass{background:var(--glass);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border:1px solid var(--border);border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,.65),inset 0 1px 0 rgba(255,255,255,.05)}
+.main-card{width:100%;max-width:620px;padding:34px 30px;animation:rise .9s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.code-title{direction:ltr;text-align:left;font-family:"Courier New",Consolas,monospace;font-size:1.5rem;color:#cfcfcf;margin-bottom:26px;min-height:2rem;letter-spacing:.5px}
+.kw{color:#8d8d8d}.str{color:#fff}
+.cursor{display:inline-block;width:9px;height:1.25rem;background:#cfcfcf;vertical-align:-3px;margin-left:4px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.actions{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.btn{display:flex;align-items:center;justify-content:center;text-align:center;padding:16px 12px;min-height:56px;color:var(--text);text-decoration:none;font-size:1rem;font-weight:600;background:rgba(255,255,255,.035);border:1px solid var(--border);border-radius:14px;cursor:pointer;transition:transform .25s,background .25s,border-color .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-3px);background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.25);box-shadow:0 10px 30px rgba(255,255,255,.05)}
+.btn.wide{padding:16px 34px}
+.page-title{font-size:1.6rem;font-weight:700;text-align:center}
+.page-note{color:var(--muted);text-align:center;max-width:560px;line-height:1.8;font-size:.95rem}
+.grid{width:100%;max-width:860px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tile{position:relative;min-height:150px;display:flex;align-items:center;justify-content:center;padding:34px 16px 18px;text-align:center;color:var(--text);text-decoration:none;font-size:1.15rem;font-weight:600;transition:transform .3s,border-color .3s,background .3s;animation:rise .8s ease both}
+.tile.soon{color:var(--muted);font-size:1.8rem;letter-spacing:4px;cursor:default}
+a.tile:hover{transform:translateY(-5px);border-color:rgba(255,255,255,.28);background:rgba(255,255,255,.08)}
+.badge{position:absolute;top:14px;right:16px;display:flex;align-items:center;gap:8px;font-size:.78rem;letter-spacing:0;color:var(--muted);font-weight:500}
+.dot{width:9px;height:9px;border-radius:50%;background:#fff;animation:dotPulse 1.6s ease-in-out infinite}
+@keyframes dotPulse{0%{box-shadow:0 0 0 0 rgba(255,255,255,.55);opacity:1}70%{box-shadow:0 0 0 9px rgba(255,255,255,0);opacity:.55}100%{box-shadow:0 0 0 0 rgba(255,255,255,0);opacity:1}}
+.dl-row{width:100%;max-width:760px;display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.dl-card{padding:30px 22px;text-align:center;display:flex;flex-direction:column;gap:12px;align-items:center;animation:rise .8s ease both}
+.dl-card h3{font-size:1.15rem}
+.dl-card p{color:var(--muted);font-size:.9rem;line-height:1.7}
+.back{position:fixed;top:18px;right:18px;z-index:5;padding:10px 18px;min-height:0;font-size:.9rem}
+@media(max-width:720px){.actions,.grid,.dl-row{grid-template-columns:1fr}.code-title{font-size:1.15rem}}
