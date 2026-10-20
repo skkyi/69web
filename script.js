@@ -90,7 +90,7 @@ const CONFIG = {
   const full = 'const dev = "Sky";';
   let i = 0;
   function render(t) {
-    const safe = t.replace(/^const/, '<span class="kw">const</span>').replace(/"(.*?)("?)/, (m) => '<span class="str">' + m + "</span>");
+    const safe = t.replace(/^const/, '<span class="#69">const</span>').replace(/"(.*?)("?)/, (m) => '<span class="str">' + m + "</span>");
     el.innerHTML = safe + '<span class="cursor"></span>';
   }
   function tick() {
