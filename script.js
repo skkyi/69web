@@ -2,7 +2,7 @@
 const CONFIG = {
   links: {
     server: "https://discord.gg/qt5MecChDf",
-    support: "https://discord.gg/qt5MecChDf",
+    support: "https://creators.sa/sauddv",
     tutorial: "https://discord.gg/RQxymajUGb"
   },
   /* لإضافة خانة جديدة في صفحة التحميل: أضف عنصراً جديداً هنا فقط */
