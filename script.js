@@ -16,8 +16,8 @@ const CONFIG = {
   ],
   /* ملفات صفحة المقاطع بجودة عالية */
   videoFiles: [
-    { title: "Topaz Video AI", desc: "لتعديل الجوده وتحسينها", href: "files/montage-1.zip" },
-    { title: "blur", desc: "لتعديل الجوده وتحسينها", href: "files/montage-2.zip" }
+    { title: "Topaz Video AI", desc: "لتعديل الجوده وتحسينها", href: "https://www.mediafire.com/file/hq8m0mrxk27r4dk/Topaz_Video_AI_v3.0.5_dis_%2540.ssaud.zip/file" },
+    { title: "blur", desc: "لتعديل الجوده وتحسينها", href: "https://www.mediafire.com/file/ffomomtddmapa68/blur-Windows-Installer-x64_dis_%2540.ssaud_.exe/file" }
   ]
 };
 
