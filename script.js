@@ -1,9 +1,9 @@
 /* ===== الإعدادات: عدّل الروابط والملفات من هنا فقط ===== */
 const CONFIG = {
   links: {
-    server: "https://discord.gg/yourserver",
-    support: "https://example.com/support",
-    tutorial: "https://youtube.com/watch?v=your_video"
+    server: "https://discord.gg/qt5MecChDf",
+    support: "https://discord.gg/qt5MecChDf",
+    tutorial: "https://discord.gg/RQxymajUGb"
   },
   /* لإضافة خانة جديدة في صفحة التحميل: أضف عنصراً جديداً هنا فقط */
   tiles: [
