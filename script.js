@@ -87,25 +87,52 @@ const CONFIG = {
 (function () {
   const el = document.getElementById("typed");
   if (!el) return;
-  const full = 'const dev = "Sky";';
-  let i = 0;
-  function render(t) {
-    const safe = t.replace(/^const/, '<span class="#69">const</span>').replace(/"(.*?)("?)/, (m) => '<span class="str">' + m + "</span>");
-    el.innerHTML = safe + '<span class="cursor"></span>';
-  }
-  function tick() {
-    i++; render(full.slice(0, i));
-    if (i < full.length) setTimeout(tick, 120);
-    else setTimeout(() => { i = 0; tick(); }, 3500);
-  }
-  setTimeout(tick, 1300);
-})();
 
-/* ===== الروابط الخارجية ===== */
-document.querySelectorAll("[data-link]").forEach(a => {
-  const url = CONFIG.links[a.dataset.link];
-  if (url) a.href = url;
-});
+  // Maxaawwan sadii kanneen wal-jijjiiranii barreeffaman
+  const texts = [
+    '#69 Web',
+    'Developed by Dis @.ssaud',
+    'print("hello world")'
+  ];
+
+  let textIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  function typeEffect() {
+    const currentText = texts[textIndex];
+
+    if (isDeleting) {
+      // Haxaa'uu (Erase)
+      charIndex--;
+    } else {
+      // Barreessuu (Type)
+      charIndex++;
+    }
+
+    // Bareeffama qulqulluu fi cursor itti dabaluu
+    el.innerHTML = currentText.substring(0, charIndex) + '<span class="cursor"></span>';
+
+    // Saffisa barreessuu fi haxaa'uu
+    let typeSpeed = isDeleting ? 40 : 80;
+
+    if (!isDeleting && charIndex === currentText.length) {
+      // Maxaan guutuu ta'ee yoo barreeffame, xiqqoo eegaa
+      typeSpeed = 2500;
+      isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+      // Yoo haxaawamee xumurame, gara maxaa itti aanutti darbi
+      isDeleting = false;
+      textIndex = (textIndex + 1) % texts.length;
+      typeSpeed = 500;
+    }
+
+    setTimeout(typeEffect, typeSpeed);
+  }
+
+  // Jalqabsiisuu
+  setTimeout(typeEffect, 1000);
+})();
 
 /* ===== توليد خانات صفحة التحميل ===== */
 (function () {
