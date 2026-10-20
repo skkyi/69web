@@ -88,7 +88,6 @@ const CONFIG = {
   const el = document.getElementById("typed");
   if (!el) return;
 
-  // Maxaawwan sadii kanneen wal-jijjiiranii barreeffaman
   const texts = [
     '#69 Web',
     'Developed by Dis @.ssaud',
@@ -103,25 +102,19 @@ const CONFIG = {
     const currentText = texts[textIndex];
 
     if (isDeleting) {
-      // Haxaa'uu (Erase)
       charIndex--;
     } else {
-      // Barreessuu (Type)
       charIndex++;
     }
 
-    // Bareeffama qulqulluu fi cursor itti dabaluu
     el.innerHTML = currentText.substring(0, charIndex) + '<span class="cursor"></span>';
 
-    // Saffisa barreessuu fi haxaa'uu
     let typeSpeed = isDeleting ? 40 : 80;
 
     if (!isDeleting && charIndex === currentText.length) {
-      // Maxaan guutuu ta'ee yoo barreeffame, xiqqoo eegaa
       typeSpeed = 2500;
       isDeleting = true;
     } else if (isDeleting && charIndex === 0) {
-      // Yoo haxaawamee xumurame, gara maxaa itti aanutti darbi
       isDeleting = false;
       textIndex = (textIndex + 1) % texts.length;
       typeSpeed = 500;
@@ -130,7 +123,6 @@ const CONFIG = {
     setTimeout(typeEffect, typeSpeed);
   }
 
-  // Jalqabsiisuu
   setTimeout(typeEffect, 1000);
 })();
 
@@ -170,3 +162,11 @@ const CONFIG = {
     card.append(h, p, a); row.appendChild(card);
   });
 })();
+
+/* ===== ربط الروابط الخارجية أوتوماتيكياً ===== */
+document.querySelectorAll("[data-link]").forEach(a => {
+  const url = CONFIG.links[a.dataset.link];
+  if (url) {
+    a.href = url;
+  }
+});
