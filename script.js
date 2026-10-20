@@ -16,8 +16,8 @@ const CONFIG = {
   ],
   /* ملفات صفحة المقاطع بجودة عالية */
   videoFiles: [
-    { title: "ملف المونتاج الأول", desc: "ملف جاهز للمونتاج والتعديل", href: "files/montage-1.zip" },
-    { title: "ملف المونتاج الثاني", desc: "ملف جاهز للمونتاج والتعديل", href: "files/montage-2.zip" }
+    { title: "Topaz Video AI", desc: "لتعديل الجوده وتحسينها", href: "files/montage-1.zip" },
+    { title: "blur", desc: "لتعديل الجوده وتحسينها", href: "files/montage-2.zip" }
   ]
 };
 
